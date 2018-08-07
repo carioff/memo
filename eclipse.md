@@ -11,4 +11,4 @@ source라는 프로퍼티가 추가되었는데 WTP가 source라는 속성을 �
 이 문제를 해결하려면 Eclipse에서 Tomcat서버를 더블클릭해서 설정부분의 
 Server Options에 있는 Publish module contexts to separate XML files를 체크한 뒤에 
 다시 톰캣을 구동하면 경고메시지가 사라집니다. 
----
+-------
