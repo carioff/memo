@@ -1,4 +1,4 @@
-## 1800807
+## 180807
 ### Eclipse에서 Tomcat실행시 SetPropertiesRule 경고 메세지 
 Eclipse에서 Tomcat실행시 콘솔에 아래와 같은 경고메시지가 나타났습니다.
 
