@@ -14,3 +14,23 @@ OAuth를 구성하고 있는 주요 4가지 객체(Roles)
 - client(클라이언트)는 resource owner(자원 소유자)의 protected resource(보호된 자원)에 접근을 요청을 하는 애플리케이션(application)입니다.
 - authorization Server(권한 서버)는 client(클라이언트)가 성공적으로 access token을 발급받은 이후에 resource owner(자원 소유자)를 인증하고 
 obtaining authorization(권한 부여)를 합니다.
+
+Protocol Flow
+    +--------+                               +---------------+
+     |        |--(A)- Authorization Request ->|   Resource    |
+     |        |                               |     Owner     |
+     |        |<-(B)-- Authorization Grant ---|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(C)-- Authorization Grant -->| Authorization |
+     | Client |                               |     Server    |
+     |        |<-(D)----- Access Token -------|               |
+     |        |                               +---------------+
+     |        |
+     |        |                               +---------------+
+     |        |--(E)----- Access Token ------>|    Resource   |
+     |        |                               |     Server    |
+     |        |<-(F)--- Protected Resource ---|               |
+     +--------+                               +---------------+
+
