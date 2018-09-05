@@ -81,9 +81,26 @@ Refresh Token은 한번 발급받은 access token은 사용할 수 있는 시간
 전용 발급 절차 없이 refresh token을 미리 가지고 있을 수 있습니다. 토큰의 형태는 access token과 동일하게 문자열 형태입니다. 
 단 권한 서버에서만 활용되며 리소스 서버에는 전송되지 않습니다.
 
-클라이언트가 권한 증서를 가지고 권한서버에 access token 을 요청하면, 권한 서버는 access token과 refresh token 을 함께 클라이언트에 알려줍니다. 
+클라이언트가 권한 증서를 가지고 권한서버에 access token 을 요청하면, 
+권한 서버는 access token과 refresh token 을 함께 클라이언트에 알려줍니다. 
 그 후 클라이언트는 access token을 사용하여 리소스 서버에 각종 필요한 리소스들을 요청하는 과정을 반복합니다. 
 그러다가 일정한 시간이 흐른 후 액세스 토큰이 만료되면, 리소스 서버는 이후 요청들에 대해 정상 결과 대신 오류를 응답하게 됩니다. 
 오류 등으로 액세스 토큰이 만료됨을 알아챈 클라이언트는, 전에 받아 두었던 refresh token을 권한 서버에 보내어 새로운 액세스 토큰을 요청합니다. 
 갱신 요청을 받은 권한 서버는 refresh token 의 유효성을 검증한 후, 문제가 없다면 새로운 액세스 토큰을 발급해줍니다.
 이 과정에서 옵션에 따라 refresh token 도 새롭게 발급 될 수 있습니다.
+
+Authorization Code와 Implicit는 OAuth 2.0 RFC에 따르면 credential client 즉, 서비스에 접근하는 외부 앱을 위한 방법입니다. 
+Authorization Code는 자신만의 서버를 갖고 동작하는 서비스일 경우, 
+Implicit는 백엔드 서버 없이 순수 클라이언트에서만 동작하는 앱일 경우에 적당한 방법입니다. 
+Implicit이 client id가 하드코딩 되어 있기 때문에 약간의 보안상 불이익이 있다는 점을 제외하면 Authorization Code와 비슷한 방식이라 할 수 있습니다. Authorization Code와 Implicit는 3rd-party를 위한 인증방식을 제공하기 때문에 우린처럼 1st-party 인증 서비스로 적당하지 않습니다.
+
+Client Credentials는 사용자 인증을 받아야 하는 입장에서 논의될 대상이 아닙니다. 
+만약 사용자 인증 및 권한부여가 아니라, 해당 앱이나 서비스 자체에 인증 및 권한부여를 해야 한다면 놀랍도록 아름다운 방법일 수 있겠으나 
+그러한 서비스가 필요한 경우 Firebase와 같은 PaaS 서비스를 사용하지 않는 이유가 무엇인지 고민해 봐야 할 듯 합니다.
+
+마지막으로 남은 방법은 Resource Owner Password Credentials 입니다. 
+OAuth 2.0 스펙 문서를 보면 id와 password를 사용해서 access token을 발급받을 수 있습니다. 
+자신의 Authorization Server(권한 서버)에 접속해서 인증하기 때문에 client id 와 secret을 하드코딩 하게 됩니다. 
+그렇기 때문에 보안상 위험이 있을 수 있으나, access token을 발급받기 위해서 사용자 id와 password도 동시에 필요하기 때문에 
+보안상 위험을 상호 보안 할 수 있습니다. 
+OAuth 2.0 문서에 Resource Owner Password Credentials의 경우 access token을 발급받은 이후에 id와 password를 삭제할 것을 권고하고 있습니다.
