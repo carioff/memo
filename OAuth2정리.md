@@ -1,5 +1,6 @@
 ### OAuth 2.0 기반의 인증 및 권한부여 방식으로 Resource Owner Password Credentials
 인증 및 권한부여를 위해서 OAuth 프레임워크의 현재(2017.03.13) 버전은 2.0
+
 https://tools.ietf.org/html/rfc6749
 
 OAuth는 서버와 클라이언트 사이에 인증을 완료하면 서버는 권한부여의 결과로써 access token을 전송합니다. 
