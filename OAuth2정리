@@ -97,7 +97,8 @@ Refresh Token은 한번 발급받은 access token은 사용할 수 있는 시간
 Authorization Code와 Implicit는 OAuth 2.0 RFC에 따르면 credential client 즉, 서비스에 접근하는 외부 앱을 위한 방법입니다. 
 Authorization Code는 자신만의 서버를 갖고 동작하는 서비스일 경우, 
 Implicit는 백엔드 서버 없이 순수 클라이언트에서만 동작하는 앱일 경우에 적당한 방법입니다. 
-Implicit이 client id가 하드코딩 되어 있기 때문에 약간의 보안상 불이익이 있다는 점을 제외하면 Authorization Code와 비슷한 방식이라 할 수 있습니다. Authorization Code와 Implicit는 3rd-party를 위한 인증방식을 제공하기 때문에 우린처럼 1st-party 인증 서비스로 적당하지 않습니다.
+Implicit이 client id가 하드코딩 되어 있기 때문에 약간의 보안상 불이익이 있다는 점을 제외하면 Authorization Code와 비슷한 방식이라 할 수 있습니다.
+Authorization Code와 Implicit는 3rd-party를 위한 인증방식을 제공하기 때문에 우린처럼 1st-party 인증 서비스로 적당하지 않습니다.
 
 Client Credentials는 사용자 인증을 받아야 하는 입장에서 논의될 대상이 아닙니다. 
 만약 사용자 인증 및 권한부여가 아니라, 해당 앱이나 서비스 자체에 인증 및 권한부여를 해야 한다면 놀랍도록 아름다운 방법일 수 있겠으나 
