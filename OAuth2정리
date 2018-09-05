@@ -34,3 +34,15 @@ Protocol Flow
      |        |<-(F)--- Protected Resource ---|               |
      +--------+                               +---------------+
 
+---
+(A) Client(클라이언트)가 Resource Owner(자원 소유자)에게 권한 요청(Authorization Request)하게 됩니다. 
+이 때 권한 요청은 Resource Owner(자원 소유자)에게 직접 하거나, Resource Server(권한 서버)를 통해 간접적으로 이루어 질 수도 있습니다.
+
+(B) Authorization Grant(권한 증서)는 자원 소유자가 자원에 접근할 수 있는 권한을 부여하였다는 확인증으로 
+Client(클라이언트)가 access token 을 요청하여 얻어오는데 사용됩니다. 이 권한 증서는 총 4개의 타입이 있습니다. 
+B-1. Authorization Code는 Client(클라이언트)가 Resource Owner(자원 소유자)에게 직접 권한 부여를 요청하는 대신, 
+Resource Owner(자원 소유자)가 Authorization Server(권한 서버)에서 인증을 받고 권한을 허가 합니다. 
+소유자가 권한을 허가하게 되면 Authorization Code(권한 코드)가 발급되고, 이 Authorization Code(권한 코드)를 클라이언트에게 전달하게 됩니다. 
+클라이언트는 이 코드를 권한 서버에 보내주면서 자신이 권한 허가를 받았다는 사실을 알리고 access token을 받게 됩니다. 
+이 방법은 보안상 이점이 있습니다. 
+access token을 바로 Client(클라이언트)로 곧바로 전달하지 않기 때문에 전달과정에서 생길 수 있는 잠재적인 유출 위험을 방지하는데 도움을 줍니다.
