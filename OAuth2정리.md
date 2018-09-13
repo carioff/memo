@@ -17,6 +17,37 @@ OAuth는 서버와 클라이언트 사이에 인증을 완료하면 서버는 �
 obtaining authorization(권한 부여)를 합니다.
 
 ### Protocol Flow
+     +----------+
+     | Resource |
+     |   Owner  |
+     |          |
+     +----------+
+          ^
+          |
+         (B)
+     +----|-----+          Client Identifier      +---------------+
+     |         -+----(A)-- & Redirection URI ---->|               |
+     |  User-   |                                 | Authorization |
+     |  Agent  -+----(B)-- User authenticates --->|     Server    |
+     |          |                                 |               |
+     |         -+----(C)-- Authorization Code ---<|               |
+     +-|----|---+                                 +---------------+
+       |    |                                         ^      v
+      (A)  (C)                                        |      |
+       |    |                                         |      |
+       ^    v                                         |      |
+     +---------+                                      |      |
+     |         |>---(D)-- Authorization Code ---------'      |
+     |  Client |          & Redirection URI                  |
+     |         |                                             |
+     |         |<---(E)----- Access Token -------------------'
+     +---------+       (w/ Optional Refresh Token)
+
+   Note: The lines illustrating steps (A), (B), and (C) are broken into
+   two parts as Protocol Flowthey pass through the user-agent.
+
+                     Figure 3: Authorization Code Flow
+                     
     +--------+                               +---------------+
      |        |--(A)- Authorization Request ->|   Resource    |
      |        |                               |     Owner     |
