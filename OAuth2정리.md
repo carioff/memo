@@ -74,27 +74,27 @@ obtaining authorization(권한 부여)를 합니다.
 Client(클라이언트)가 access token 을 요청하여 얻어오는데 사용됩니다. 이 권한 증서는 총 4개의 타입이 있습니다. 
 -Authorization Code: used with server-side Applications
 -Implicit: used with Mobile Apps or Web Applications (applications that run on the user's device)
--Resource Owner Password Credentials: used with trusted Applications, such as those owned by the service itself
+#-Resource Owner Password Credentials: used with trusted Applications, such as those owned by the service itself
 -Client Credentials: used with Applications API access
 
-### B-1. Authorization Code는 Client(클라이언트)가 Resource Owner(자원 소유자)에게 직접 권한 부여를 요청하는 대신, 
+>> ### B-1. Authorization Code는 Client(클라이언트)가 Resource Owner(자원 소유자)에게 직접 권한 부여를 요청하는 대신, 
 Resource Owner(자원 소유자)가 Authorization Server(권한 서버)에서 인증을 받고 권한을 허가 합니다. 
 소유자가 권한을 허가하게 되면 Authorization Code(권한 코드)가 발급되고, 이 Authorization Code(권한 코드)를 클라이언트에게 전달하게 됩니다. 
 클라이언트는 이 코드를 권한 서버에 보내주면서 자신이 권한 허가를 받았다는 사실을 알리고 access token을 받게 됩니다. 
 이 방법은 보안상 이점이 있습니다. 
 access token을 바로 Client(클라이언트)로 곧바로 전달하지 않기 때문에 전달과정에서 생길 수 있는 잠재적인 유출 위험을 방지하는데 도움을 줍니다.
 
-### B-2.Implicit는 Authorization Code(권한 코드)를 간소화한 절차입니다. 
+>> ### B-2.Implicit는 Authorization Code(권한 코드)를 간소화한 절차입니다. 
 Authorization Code(권한 코드) 방식에서 access token을 얻기 위한 중간 매개체로 Authorization Code(권한 코드)를 사용했던 것과 달리, 
 이 방식은 Authorization Code(권한 코드)가 별도로 발급되지 않고 access token이 바로 발급됩니다. 
 과정이 줄어들어 편해지는 대신 보안성은 낮아집니다.
 
-### B-3. Resource Owner Password Credentials 이 방식에서는 자원 소유자의 계정 아이디와 비밀번호 같은 계정 인증 정보가 
+>> ### B-3. Resource Owner Password Credentials 이 방식에서는 자원 소유자의 계정 아이디와 비밀번호 같은 계정 인증 정보가 
 access token을 얻기 위한 Authorization Grant(권한 증서)로 사용됩니다. 
 계정정보를 애플리케이션에 직접 입력해야 하므로, 신뢰할 수 있어야 합니다. 
 access token 을 얻은 후에는 리소스 요청을 위해 계정 아이디, 비밀번호를 Client(클라이언트)가 보관하고 있을 필요는 없습니다.
 
-### B-4. Client Credentials 이 방식은 클라이언트 인증 방식이라고도 합니다. 
+>> ### B-4. Client Credentials 이 방식은 클라이언트 인증 방식이라고도 합니다. 
 자원 소유자가 유저가 아닌, 클라이언트인 상황에서 활용되는 방식입니다.
 Client(클라이언트)가 관리하는 리소스에만 접근할 경우로 권한이 한정되어 있을 때 활용할 수 있습니다.
 즉 Client(클라이언트)가 곧 Resource Owner(자원 소유자)가 되는 상황입니다.
