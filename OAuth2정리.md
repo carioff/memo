@@ -16,7 +16,7 @@ OAuth는 서버와 클라이언트 사이에 인증을 완료하면 서버는 �
 - authorization Server(권한 서버)는 client(클라이언트)가 성공적으로 access token을 발급받은 이후에 resource owner(자원 소유자)를 인증하고 
 obtaining authorization(권한 부여)를 합니다.
 
-### Protocol Flow
+> ### Protocol Flow
      +----------+
      | Resource |
      |   Owner  |
