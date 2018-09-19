@@ -14,3 +14,22 @@
 출처: http://kingbbode.tistory.com/10 [개발노트 - kingbbode]
 
 1. Service Discovery: Eureka Clients
+2. Service Discovery: Eureka Server
+3. Circuit Breaker: Hystrix Clients
+4. Circuit Breaker: Hystrix Dashboard
+5. Hystrix Timeouts And Ribbon Clients
+6. Client Side Load Balancer: Ribbon
+7. External Configuration: Archaius
+8. Router and Filter: Zuul
+Netflix uses Zuul for the following:
+
+Authentication
+Insights
+Stress Testing
+Canary Testing
+Dynamic Routing
+Service Migration
+Load Shedding
+Security
+Static Response handling
+Active/Active traffic management
