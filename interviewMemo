@@ -1,0 +1,18 @@
+190412 면접정리
+- Http 통신과정 정리
+사용자~서버 과정
+- Filter, Interceptor 차이
+- 사용자가 Https 인증서 분실시 
+- Queue를 2stack으로 구현
+- Spring thread 설정
+- maven, gradle lib 의존성 분리 
+- 암호화 알고리즘
+- IoC DI 과정 및 장점
+- SOLID 
+- Block, Non-Block, Async 구분
+- var let 차이
+- closure란
+- JVM 구조
+- GC 알고리즘
+- 스레드, 프로세스 관계
+- 자바의 리플렉션, 인트로스펙션
