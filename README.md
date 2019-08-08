@@ -1,2 +1,0 @@
-# memo
-solved issues tracking
