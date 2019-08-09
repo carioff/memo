@@ -19,3 +19,12 @@ SOLID
 4. ISP
 5. DIP
 
+1.5 스프링IoC
+스프링에서는 빈팩토리보다는 Application context를 주로 사용한다.
+- 구체적인 팩토리 클래스를 알 필요가 없다. 다양한 검색 방법 제공
+- 컨테이너 기반 종합 IoC 서비스를 제공해 준다.
+
+- bean : IoC방식으로 managed object, 스프링이 직접 생성과 제어를 담당하는 object만 해당
+- bean factory : IoC를 담당하는 핵심컨테이너(생성/제어관점), 빈팩토리를 확장한 애플리케이션 컨텍스트를 이용, getBean() 과 같은 메소드 정의됨
+- application context : 빈 팩토리를 확장한 IoC 컨테이너(스프링제공 지원기능)
+- container: container 자체가 IoC 개념을 담고 있다. 다수의 Application Context Object => Spring Container(스프링에 빈을 등록하고)
