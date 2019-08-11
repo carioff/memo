@@ -28,3 +28,11 @@ SOLID
 - bean factory : IoC를 담당하는 핵심컨테이너(생성/제어관점), 빈팩토리를 확장한 애플리케이션 컨텍스트를 이용, getBean() 과 같은 메소드 정의됨
 - application context : 빈 팩토리를 확장한 IoC 컨테이너(스프링제공 지원기능)
 - container: container 자체가 IoC 개념을 담고 있다. 다수의 Application Context Object => Spring Container(스프링에 빈을 등록하고)
+
+1.6 싱글톤 레지스트리와 오브젝트 스코프
+오브젝트 동일성(==) >= 동등성(equals())
+동일하다면 하나의 오브젝트에 두개의 오브젝트 레퍼런스 변수 ==> 어플리케이션 컨텍스트, 싱글톤 레지스트리
+동등하다면 두개의 비교대상인 Object클래스의 equals() 기준에 동등 비교 ==> 오브젝트 팩토리
+
+싱글톤 패턴: 단일 오브젝트를 여러곳에서 공유
+
