@@ -11,12 +11,19 @@ NIO API의 네 가지 핵심 요소
 java.nio.Buffer	모든 버퍼가 상속받는 추상 클래스
 java.nio.ByteBuffer	byte 타입의 데이터를 저장하는 버퍼. 
 다이렉트(direct) 버퍼와 논다이렉트(nondirect) 버퍼가 존재하며, ReadableByteChannel과 WritableByteChannel을 통해서 데이터를 입출력할 수 있다.
+
 java.nio.MappedByteBuffer	byte를 저장하는 버퍼로서 항상 다이렉트이다. 파일의 특정 영역을 메모리에 매핑시킬 때 사용된다.
+
 java.nio.CharBuffer	char를 저장하며, 다이렉트 또는 논다이렉트 버퍼일 수 있다. 채널에 쓸 수 없다.
+
 java.nio.DoubleBuffer	double을 저장하며, 다이렉트 또는 논다이렉트 버퍼일 수 있다. 채널에 쓸 수 없다.
+
 java.nio.FloatBuffer	float을 저장하며, 다이렉트 또는 논다이렉트 버퍼일 수 있다.
+
 java.nio.IntBuffer	int 데이터를 저장하며, 다이렉트 또는 논다이렉트 버퍼일 수 있다.
+
 java.nio.LongBuffer	int 데이터를 저장하며, 다이렉트 또는 논다이렉트 버퍼일 수 있다.
+
 java.nio.ShortBuffer	int 데이터를 저장하며, 다이렉트 또는 논다이렉트 버퍼일 수 있다.
 
 Direct vs Nondirect
