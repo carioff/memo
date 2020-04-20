@@ -33,6 +33,19 @@ ByteBuffer.allocate()
 따라서, 다이렉트 버퍼의 경우는 크고 지속적으로 사용되는 버퍼에 알맞다.
 
 Channel
+자바2 1.4 베타3 버전에는 다음과 같은 종류의 채널이 존재
 
+FileChannel - 파일에 대한 입출력 채널
+Pipe.SinkChannel - 파이프에 데이터를 출력하는 채널
+Pipe.SourceChannel - 파이프로부터 데이터를 입력받는 채널
+ServerSocketChannel - 클라이언트의 연결 요청을 처리하는 서버 소켓 채널
+SocketChannel - 소켓과 연결된 채널
+DatagramChannel - DatagraSocket과 연결된 채널
+
+    public MappedByteBuffer map(FileChannel.MapMode mode, long position, int size)
+    
+FileChannel.MapMode.PRIVATE - 파일에 영향을 미치지 않고 받지 않는 버퍼를 생성한다.
+FileChannel.MapMode.READ_ONLY - 읽기 전용 버퍼를 생성한다.
+FileChannel.MapMode.READ_WRITE - 읽기/쓰기 버퍼를 생성한다.
 
 Ref: https://javacan.tistory.com/tag/MappedByteBuffer
